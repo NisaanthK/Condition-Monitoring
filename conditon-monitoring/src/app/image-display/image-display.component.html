@@ -1,0 +1,14 @@
+<p>image-display works!</p>
+<div class="image-gallery">
+  <div *ngFor="let image of images">
+    <img [src]="image.src" [alt]="image.alt" (click)="openModal(image)" />
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedImage">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <img [src]="selectedImage.src" [alt]="selectedImage.alt" />
+    <div class="caption">{{ selectedImage.caption }}</div>
+  </div>
+</div>
