@@ -1,14 +1,32 @@
-<p>image-display works!</p>
-<div class="image-gallery">
-  <div *ngFor="let image of images">
-    <img [src]="image.src" [alt]="image.alt" (click)="openModal(image)" />
-  </div>
-</div>
+<div class="container">
+  <h1>Condition Monitoring Dashboard</h1>
 
-<div class="modal" *ngIf="selectedImage">
-  <div class="modal-content">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <img [src]="selectedImage.src" [alt]="selectedImage.alt" />
-    <div class="caption">{{ selectedImage.caption }}</div>
+  <div class="intro">
+    <p>
+      This dashboard was implemented as part of my thesis work at KIEFEL GmbH. I developed both the frontend and backend to monitor and visualize the pressing force values of thermoforming machines. The project involved preparing mock machines that send data every 30 seconds for each machine cycle, storing this data in InfluxDB, and writing Flux queries to retrieve the data. I thoroughly tested these queries using Postman API before creating services to display the data on the frontend. The screenshots below illustrate the key components and functionalities of the dashboard.
+    </p>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-tile" *ngFor="let image of images" (click)="openModal(image)">
+      <div class="image-content">
+        <h3>{{ image.title }}</h3>
+      </div>
+      <img [src]="image.src" [alt]="image.alt" />
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="selectedImage">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <img [src]="selectedImage.src" [alt]="selectedImage.alt" />
+      <div class="caption">
+        <h3>{{ selectedImage.title }}</h3>
+        <p>{{ selectedImage.description }}</p>
+        <ul>
+          <li *ngFor="let point of selectedImage.bulletPoints">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
