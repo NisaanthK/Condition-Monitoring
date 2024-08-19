@@ -1,11 +1,15 @@
 <div class="container">
   <h1>Condition Monitoring Dashboard Interfaces</h1>
 
-  <div class="intro">
+  <div class="intro" style="font-family: Arial, sans-serif; text-align: justify;">
     <p>
-      This dashboard was implemented as part of my thesis work at KIEFEL GmbH.<span style="font:bold; color: darkgray;">This application is to display the interface that I developed at KIEFEL</span> I developed both the frontend and backend to monitor and visualize the pressing force values of thermoforming machines. The project involved preparing mock machines that send data every 30 seconds for each machine cycle, storing this data in InfluxDB, and writing Flux queries to retrieve the data. I thoroughly tested these queries using Postman API before creating services to display the data on the frontend. The screenshots below illustrate the key components and functionalities of the dashboard.
+        This dashboard was implemented as part of my thesis work at KIEFEL GmbH.
+        <span style="font-weight: bold; color: #000000;">
+            This application is to display the interface that I worked and developed for 6 months at KIEFEL.
+        </span>
+        I developed both the frontend and backend to monitor and visualize the pressing force values of thermoforming machines. The project involved preparing mock machines that send data every 30 seconds for each machine cycle, storing this data in InfluxDB, and writing Flux queries to retrieve the data. I thoroughly tested these queries using Postman API before creating services to display the data on the frontend. And also did the Database comparison. The screenshots below illustrate the key components and functionalities of the dashboard.
     </p>
-  </div>
+</div>
 
   <div class="image-gallery">
     <div class="image-tile" *ngFor="let image of images" (click)="openModal(image)">
