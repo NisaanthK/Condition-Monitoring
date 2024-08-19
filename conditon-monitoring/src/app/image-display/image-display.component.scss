@@ -41,8 +41,8 @@ h1 {
 
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .image-tile {
@@ -62,20 +62,29 @@ h1 {
 
   .image-content {
     flex: 1;
-    padding-right: 20px;
+    padding-right: 15px;
 
     h3 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+    }
+
+    p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #666;
       font-family: 'Arial', sans-serif;
     }
   }
 
   img {
     width: 100%;
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: transform 0.3s ease;
   }
 }
@@ -164,13 +173,14 @@ h1 {
 
   .introduction {
     padding: 10px;
+
     p {
       font-size: 1rem;
     }
   }
 
   .image-tile {
-    flex-direction: column; /* Stack content on top of image on mobile */
+    flex-direction: column;
     text-align: center;
     padding: 10px;
 
